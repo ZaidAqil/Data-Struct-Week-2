@@ -1,0 +1,48 @@
+CAR MAIN.cpp
+#include <iostream>
+#include "car.h"
+using namespace std;
+void main()
+{
+	Car Kembara(5);
+	Car Kancil(4);
+
+	Kembara.stop();
+	Kancil.stop();
+	getchar();
+}
+
+CAR.cpp
+#include <iostream>
+#include "car.h"
+using namespace std;
+
+Car::Car(int tyre)
+{
+	numOfTyre = tyre;
+}
+Car::~Car() { }
+
+void Car::stop()
+{
+	cout<< "Please stop now!"<< numOfTyre<<"tyre"
+		<< endl;
+	
+}
+
+CAR.h
+
+#pragma once
+
+#ifndef CAR_H
+#define CAR_H
+class Car {
+private:
+	int numOfTyre;
+
+public:
+	Car(int Tyre);
+	~Car();
+	void stop();
+};
+#endif
